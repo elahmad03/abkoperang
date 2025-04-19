@@ -10,6 +10,7 @@ import Repair from './pages/Repair';
 import Development from './pages/Developtment';
 import Crypto from './pages/Crypto';
 import DetailsPage from './pages/detailsPage';
+import ErrorPage from './pages/ErrorPage'; // Import the ErrorPage component
 import tecnoLogo from './assets/img/tecno.jpg'
 import itelLogo from './assets/img/itelPhone.jpg';
 import iphoneLogo from './assets/img/iphone.jpg';
@@ -45,7 +46,7 @@ const phonesData = [
     image: xiomiLogo,
     description: 'A well-rounded smartphone offering a balance of performance and features.'
   },
-  
+
   // Add more phone data here
 ];
 
@@ -64,6 +65,8 @@ function App() {
         <Route path="/repair" element={<Repair />} />
         <Route path="/development" element={<Development />} />
         <Route path="/crypto" element={<Crypto />} />
+        {/* This route will catch any path that doesn't match the ones above */}
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       {/* footer */}
       <Footer />
